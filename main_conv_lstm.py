@@ -28,8 +28,10 @@ tf.app.flags.DEFINE_integer('batch_size', 16,
                             """batch size for training""")
 tf.app.flags.DEFINE_float('weight_init', .1,
                             """weight init for fully connected layers""")
-
-fourcc = cv2.cv.CV_FOURCC('m', 'p', '4', 'v') 
+# cv2 2.x
+# fourcc = cv2.cv.CV_FOURCC('m', 'p', '4', 'v') 
+# cv2 3.x
+fourcc = cv2.VideoWriter_fourcc('m', 'p', '4', 'v') 
 
 def generate_bouncing_ball_sample(batch_size, seq_length, shape, num_balls):
   dat = np.zeros((batch_size, seq_length, shape, shape, 3))
